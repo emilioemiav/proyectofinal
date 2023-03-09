@@ -17,7 +17,8 @@ import Typography from "@mui/material/Typography";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import HomeIcon from "@mui/icons-material/Home";
 import { Inventory } from "@mui/icons-material";
-import { useNavigate } from "react-router-dom";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { useLocation, useNavigate } from "react-router-dom";
 import { color } from "@mui/system";
 
 const drawerWidth = 280;
@@ -25,7 +26,8 @@ const drawerWidth = 280;
 export default function ResponsiveDrawer(props) {
   const { window } = props;
   const navigate = useNavigate();
-
+  const location = useLocation();
+  console.log(location.pathname);
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -40,7 +42,12 @@ export default function ResponsiveDrawer(props) {
       </Toolbar>
       <Divider />
       <List>
-        <ListItem disablePadding>
+        <ListItem
+          disablePadding
+          sx={{
+            backgroundColor: location.pathname === "/home" ? "red" : undefined,
+          }}
+        >
           <ListItemButton
             onClick={() => navigate("/home")}
             className="listitem"
@@ -73,6 +80,17 @@ export default function ResponsiveDrawer(props) {
               <Inventory />
             </ListItemIcon>
             <ListItemText primary={"Stock"} />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton
+            onClick={() => navigate("/users")}
+            className="listitem"
+          >
+            <ListItemIcon sx={{ color: "#FCFCFC" }}>
+              <AccountCircleIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Users"} />
           </ListItemButton>
         </ListItem>
       </List>

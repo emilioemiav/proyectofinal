@@ -1,0 +1,19 @@
+.headform {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 16px;
+}
+
+.camposprod {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 48px;
+  align-items: baseline;
+}
+
+.TextField {
+  margin: 8px;
+}

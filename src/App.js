@@ -7,6 +7,8 @@ import Pedidos from "./pages/Pedidos";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Add from "./pages/AddProduct";
 import Tabla from "./components/tabla";
+import UsersPage from "./pages/Users";
+import EditProducto from "./pages/EditProducto";
 
 const theme = createTheme({
   palette: {
@@ -36,8 +38,10 @@ function App() {
             <Route path="/home" element={<Home />}></Route>
             <Route path="/stock" element={<Stock />} />
             <Route path="/pedidos" element={<Pedidos />} />
+            <Route path="/users" element={<UsersPage />} />
             <Route path="/addproduct" element={<Add />} />
             <Route path="/tabla" element={<Tabla />} />
+            <Route path="/editproducto/:id" element={<EditProducto />} />
           </Routes>
         </ResponsiveDrawer>
       </BrowserRouter>
