@@ -10,6 +10,7 @@ import IconButton from "@mui/material/IconButton";
 import "./tabla.css";
 import Search from "./search";
 import { productos } from "../pages/EditProducto";
+import AddIcon from "@mui/icons-material/Add";
 
 export default function Tabla() {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ export default function Tabla() {
 
   const [listaProducto, setListaProducto] = React.useState([]);
   const eliminar = (id) => {
-    //todo hacer la llamada p eliminar un prod con id
+    //to do hacer la llamada p eliminar un prod con id
     const listadoActual = [...listaProducto];
     const nuevoListado = listadoActual.filter((item) => {
       return item.id !== id;
@@ -28,7 +29,7 @@ export default function Tabla() {
   };
 
   React.useEffect(() => {
-    //todo hacer la llamada p obtener los prod de la bd
+    //to do hacer la llamada p obtener los prod de la bd
     setListaProducto(productos);
   }, []);
 
@@ -90,6 +91,7 @@ export default function Tabla() {
         <Typography>Tabla productos</Typography>
         <Search></Search>
         <Button
+          startIcon={<AddIcon />}
           variant="contained"
           sx={(thema) => ({
             background: thema.palette.primary.light,

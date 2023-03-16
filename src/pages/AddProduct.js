@@ -5,7 +5,7 @@ import FormProducto from "../components/formProducto";
 export default function FormPropsTextFields() {
   return (
     <div>
-      <FormProducto onSubmit={() => alert("asda")} />
+      <FormProducto onSubmit={() => alert("Producto agregado con exito")} />
     </div>
   );
 }

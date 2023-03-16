@@ -41,11 +41,12 @@ export default function ResponsiveDrawer(props) {
         <img src="/logo.png" />
       </Toolbar>
       <Divider />
-      <List>
+      <List className="listanav">
         <ListItem
           disablePadding
           sx={{
-            backgroundColor: location.pathname === "/home" ? "red" : undefined,
+            backgroundColor:
+              location.pathname === "/home" ? "#1B3A4D" : undefined,
           }}
         >
           <ListItemButton
@@ -59,7 +60,13 @@ export default function ResponsiveDrawer(props) {
           </ListItemButton>
         </ListItem>
 
-        <ListItem disablePadding>
+        <ListItem
+          disablePadding
+          sx={{
+            backgroundColor:
+              location.pathname === "/pedidos" ? "#1B3A4D" : undefined,
+          }}
+        >
           <ListItemButton
             onClick={() => navigate("/pedidos")}
             className="listitem"
@@ -71,7 +78,13 @@ export default function ResponsiveDrawer(props) {
           </ListItemButton>
         </ListItem>
 
-        <ListItem disablePadding>
+        <ListItem
+          disablePadding
+          sx={{
+            backgroundColor:
+              location.pathname === "/stock" ? "#1B3A4D" : undefined,
+          }}
+        >
           <ListItemButton
             onClick={() => navigate("/stock")}
             className="listitem"
@@ -82,7 +95,13 @@ export default function ResponsiveDrawer(props) {
             <ListItemText primary={"Stock"} />
           </ListItemButton>
         </ListItem>
-        <ListItem disablePadding>
+        <ListItem
+          disablePadding
+          sx={{
+            backgroundColor:
+              location.pathname === "/users" ? "#1B3A4D" : undefined,
+          }}
+        >
           <ListItemButton
             onClick={() => navigate("/users")}
             className="listitem"
